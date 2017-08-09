@@ -12,7 +12,7 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 /unix or /vmunix <-> /boot/vmlinuz
 
 ## Schema of bootstraping
- BIOS -> MBR -> GRUB -? Kernel -> Init Process -> Runlevels
+ BIOS -> MBR -> GRUB -> Kernel -> Init Process -> Runlevels
 
 ## Runlevels
 - 0 Halt
@@ -22,3 +22,12 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 - 4 Not used
 - 5 Full multi-user graphical mode (provides a GUI desktop login)
 - 6 Reboot
+
+##Some kernel processes on Linux systems
+- kjournald - commits filesystem journal updates to disk
+- kwsapd - swaps processes wen physical memory is low
+- ksoftirqd - handles soft interrupt if they can't be dealt with context swich time
+- khubd - configures USB devices
+
+- fstab or vfstab - files determine how the filesystem should be mount
+- fsck - this command check & repair filesystem
