@@ -15,10 +15,10 @@ The kernel is itself a program and the first bootstrappping task is to get this 
  BIOS -> MBR -> GRUB -? Kernel -> Init Process -> Runlevels
 
 ## Runlevels
-0 - Halt
-1 - Singe-user mode
-2 - Multi-user with partial services
-3 - Full multi-user with networking (text mode)
-4 - Not used
-5 - Full multi-user graphical mode (provides a GUI desktop login)
-6 - Reboot
+- 0 Halt
+- 1 Singe-user mode
+- 2 Multi-user with partial services
+- 3 Full multi-user with networking (text mode)
+- 4 Not used
+- 5 Full multi-user graphical mode (provides a GUI desktop login)
+- 6 Reboot
