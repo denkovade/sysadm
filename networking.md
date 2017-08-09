@@ -10,5 +10,18 @@
 |  Network | Data Link  | this layer is concerned with the linkages and mechanisms used to move data about the network, including the topology, such as Ethernet or Token Ring, and deals with the ways in which data is reliably transmitted.  | Ethernet, Token Ring, PPP   |
 |  Access |  Physical | This layer defines the electrical and physical specifications for the networking media that carry the data bits across a network.  | ISDN, DSL, 100Base-Tx  |
 
+#TCP model explanations
+- Application Layer: Represents data to the user plus encoding and dialog control
+- Transport Layer: Supports communication between divers devices accrose diverse networks.
+- Internet Layer: Determines the best path through the network
+- Network Accesss Layer: Controls the hardware devices and media that make up the network
+
+#Ports
+|port number range | port group   |
+|---|---|
+| 0 to 1023 | well known (contact) port  |
+| 1024 to 49151 | registered ports  |
+| 49152 to 65535 | private and/or dynamic ports   |
+
 
 
