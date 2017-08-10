@@ -50,9 +50,9 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 ```d _ _ _ _ _ _ _ _ _ filename ```<br />
 ```user group other```<br />
 r = 4   w = 2  x = 1
-```chmod u+x file
-chmod ugo -w file
-chmod 555 file```
+```chmod u+x file```
+```chmod ugo -w file```
+```chmod 555 file```
 
 # command **STDIN STDOUT STDERR**
 STDIN - comes from keyboard
@@ -61,9 +61,9 @@ STDERR - cose to console
 
 * Not all commands listen for STDIN
 
-<br /> 0< redirect STDIN
-<br /> 1> redirect STDOUT
-<br /> 2> redirect STDERR
-<br /> * | pipe resolts into STDIN of a command
-<br /> * >> this will append instead of everwriting
-<br /> * & used if redirecting STDERR into STDOUT or vice versa
+0< redirect STDIN <br />
+1> redirect STDOUT <br />
+2> redirect STDERR <br />
+| pipe resolts into STDIN of a command <br />
+>> this will append instead of everwriting <br />
+& used if redirecting STDERR into STDOUT or vice versa <br />
