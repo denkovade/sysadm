@@ -49,10 +49,27 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 ```chmod```<br />
 ```d _ _ _ _ _ _ _ _ _ filename ```<br />
 ```user group other```<br />
-r = 4   w = 2  x = 1
-```chmod u+x file```
-```chmod ugo -w file```
-```chmod 555 file```
+r = 4   w = 2  x = 1 <br />
+```chmod u+x file``` <br />
+```chmod ugo -w file``` <br />
+```chmod 555 file``` <br />
+
+## SetUID, SetGID, and Sticky Bits
+SUID = 4 SGID = 2 sticky bit = 1 <br />
+SUID - rws rwx rwx ```chmod u+s file```<br />
+SGID - rwx rws rwx ```chmod g+s file```<br />
+stickybit -rwx rwx rwt ```chmod o+t file```<br />
+
+
+* *SUID*<br />
+file - allows executable binnary to run with permission of owner<br />
+folder - no effect<br />
+* *SGUID*<br />
+file - same as SUID but with group permission<br />
+folder - new files in folder make on matching group ownership<br />
+* *sticky bit*<br />
+file - no effect<br />
+folder - fildes within can only be deleted or renamed by owner or root<br />
 
 # command **STDIN STDOUT STDERR**
 STDIN - comes from keyboard
