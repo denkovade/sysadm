@@ -64,6 +64,6 @@ STDERR - cose to console
 * 0< redirect STDIN <br />
 * 1> redirect STDOUT <br />
 * 2> redirect STDERR <br />
-* | pipe resolts into STDIN of a command <br />
-* >> this will append instead of everwriting <br />
+* '|' pipe resolts into STDIN of a command <br />
+* '>>' this will append instead of everwriting <br />
 * & used if redirecting STDERR into STDOUT or vice versa <br />
