@@ -46,15 +46,13 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 * 19 lowest priority
 
 # Prmissions
-```chmod```
-```d _ _ _ _ _ _ _ _ _ filename ```
-```user group other```
-* r = 4
-* w = 2
-* x = 1
-chmod u+x file
+```chmod```<br />
+```d _ _ _ _ _ _ _ _ _ filename ```<br />
+```user group other```<br />
+r = 4   w = 2  x = 1
+```chmod u+x file
 chmod ugo -w file
-chmod 555 file
+chmod 555 file```
 
 # command **STDIN STDOUT STDERR**
 STDIN - comes from keyboard
@@ -63,9 +61,9 @@ STDERR - cose to console
 
 * Not all commands listen for STDIN
 
-* 0< redirect STDIN
-* 1> redirect STDOUT
-* 2> redirect STDERR
-* | pipe resolts into STDIN of a command
-* >> this will append instead of everwriting
-* & used if redirecting STDERR into STDOUT or vice versa
+<br /> 0< redirect STDIN
+<br /> 1> redirect STDOUT
+<br /> 2> redirect STDERR
+<br /> * | pipe resolts into STDIN of a command
+<br /> * >> this will append instead of everwriting
+<br /> * & used if redirecting STDERR into STDOUT or vice versa
