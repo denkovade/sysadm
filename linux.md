@@ -72,9 +72,9 @@ file - no effect<br />
 folder - fildes within can only be deleted or renamed by owner or root<br />
 
 # command **STDIN STDOUT STDERR**
-STDIN - comes from keyboard
-STDOUT - goes to console
-STDERR - cose to console
+STDIN - comes from keyboard<br />
+STDOUT - goes to console<br />
+STDERR - cose to console<br />
 
 * Not all commands listen for STDIN
 
@@ -84,3 +84,59 @@ STDERR - cose to console
 * '|' pipe resolts into STDIN of a command <br />
 * '>>' this will append instead of everwriting <br />
 * & used if redirecting STDERR into STDOUT or vice versa <br />
+
+# Cron & Time services <br />
+CRON - command run on (/etc)
+* runns in 3 ways:<br />
+	1. cron.hourly, cron.daily , cron.monthly, cron.weekly <- root<br />
+	2. /etc/crontab <- specify user which run this cron<br />
+		/etc.cron.d/*<br />
+	3. personal crontab <- user<br />
+```crontab -e``` -> edit crontab<br />
+```crontab -l``` -> check cron on current user<br />
+
+## Example of job definition:<br />
+#.---------------- minute (0 - 59)<br />
+#| .------------- hour (0 - 23)<br />
+#| | .---------- day of month (1 - 31)<br />
+#| | | .------- month (1 - 12) OR jan,feb,mar,apr ...<br />
+#| | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat<br />
+#| | | | |<br />
+#* * * * * user-name command to be executed<br />
+
+* **can be**<br />
+*/5 every 5<br />
+2,3,6 only 2,3,6<br />
+3-10 from 3 to 10<br />
+
+# SELinux
+* Good - standart posix permissions
+* Better - ACLs
+* Best - SELinux
+SELinux:
+- stops foot - shoooting
+- limits application's ability
+- manage by port, app
+PRO TIP
+If you've configured thing correctly, but stuff doesn't work, look for SELinux issues
+/etc/syssconfig/selinux
+SELINUX modes:
+- enforcing -> enacts rules
+12/54- permissive -> logs violations, but doesnt stop them
+- disabled -> turned off
+Contect lables:
+- default SELinux mode is "targeted"
+- files, folders, process, ports are labeled according the access required to access them
+show contexts: ls -Z; ps -Z; netstat -Z
+changing contexts
+chcon -t type file/folder
+restorecon -vR /var/www
+NOTE - contexts are inherited like permissions and ACLs . So cp is often more effective than mv
+/etc/log/audit -> logs about selinux
+yum install setroubleshoot-server ->this packet help to see humanreadable format in selinux
+service restart audit
+sealert -l
+SELinux booleans
+getsebool -a -> show all possible (grep is useful here)
+setsebool [-P] booloption on/off (1/0)
+/etc/selinux/targeted/modules/active/booleans.local
