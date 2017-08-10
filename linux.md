@@ -41,17 +41,17 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 
 
 # renicing and killing rouge processes ->nice level
--20 highest priority
-0 normal, default
-19 lowest priority
+* -20 highest priority
+* 0 normal, default
+* 19 lowest priority
 
-#Prmissions
+# Prmissions
 ```chmod```
-d _ _ _ _ _ _ _ _ _ filename
-user group other
-r - 4
-w - 2
-x - 1
+```d _ _ _ _ _ _ _ _ _ filename ```
+```user group other```
+* r = 4
+* w = 2
+* x = 1
 chmod u+x file
 chmod ugo -w file
 chmod 555 file
@@ -60,10 +60,12 @@ chmod 555 file
 STDIN - comes from keyboard
 STDOUT - goes to console
 STDERR - cose to console
-Not all commands listen for STDIN
-0< redirect STDIN
-1> redirect STDOUT
-2> redirect STDERR
-| pipe resolts into STDIN of a command
->> this will append instead of everwriting
-& used if redirecting STDERR into STDOUT or vice versa
+
+* Not all commands listen for STDIN
+
+* 0< redirect STDIN
+* 1> redirect STDOUT
+* 2> redirect STDERR
+* | pipe resolts into STDIN of a command
+* >> this will append instead of everwriting
+* & used if redirecting STDERR into STDOUT or vice versa
