@@ -13,6 +13,13 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 
 ## Schema of bootstraping
  BIOS -> MBR -> GRUB -> Kernel -> Init Process -> Runlevels
+ 
+# Reboots&Runlevels
+ telinit X - change init level;X is number of runlevel 
+ init X - change init level;X is number of runlevel
+ whoami - check user 
+ runlevel - check runlevel
+ shutdown -r now - reboot the computer
 
 ## Runlevels
 - 0 Halt
@@ -31,3 +38,32 @@ The kernel is itself a program and the first bootstrappping task is to get this 
 
 - fstab or vfstab - files determine how the filesystem should be mount
 - fsck - this command check & repair filesystem
+
+
+# renicing and killing rouge processes ->nice level
+-20 highest priority
+0 normal, default
+19 lowest priority
+
+#Prmissions
+```chmod```
+d _ _ _ _ _ _ _ _ _ filename
+user group other
+r - 4
+w - 2
+x - 1
+chmod u+x file
+chmod ugo -w file
+chmod 555 file
+
+# command **STDIN STDOUT STDERR**
+STDIN - comes from keyboard
+STDOUT - goes to console
+STDERR - cose to console
+Not all commands listen for STDIN
+0< redirect STDIN
+1> redirect STDOUT
+2> redirect STDERR
+| pipe resolts into STDIN of a command
+>> this will append instead of everwriting
+& used if redirecting STDERR into STDOUT or vice versa
