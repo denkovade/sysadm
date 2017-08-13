@@ -103,7 +103,9 @@ CRON - command run on (/etc)
 #| | | .------- month (1 - 12) OR jan,feb,mar,apr ...<br />
 #| | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat<br />
 #| | | | |<br />
-#* * * * * user-name command to be executed ```<br />
+#* * * * * user-name command to be executed
+```
+
 
 * **can be**<br />
 */5 every 5<br />
