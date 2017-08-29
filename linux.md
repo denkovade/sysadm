@@ -96,13 +96,16 @@ CRON - command run on (/etc)
 ```crontab -l``` -> check cron on current user<br />
 
 ## Example of job definition:<br />
-#.---------------- minute (0 - 59)<br />
-#| .------------- hour (0 - 23)<br />
-#| | .---------- day of month (1 - 31)<br />
-#| | | .------- month (1 - 12) OR jan,feb,mar,apr ...<br />
-#| | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat<br />
-#| | | | |<br />
-#* * * * * user-name command to be executed<br />
+```
+#.---------------- minute (0 - 59)
+#| .------------- hour (0 - 23)
+#| | .---------- day of month (1 - 31)
+#| | | .------- month (1 - 12) OR jan,feb,mar,apr ...
+#| | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+#| | | | |
+#* * * * * user-name command to be executed
+```
+
 
 * **can be**<br />
 */5 every 5<br />
